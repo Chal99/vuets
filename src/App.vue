@@ -1,18 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+<div>
+  <h1 class="title">{{ title }}</h1>
+  <my-form />
+  <my-list />
+</div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import MyForm from './components/MyForm.vue'
+import MyList from './components/MyList.vue'
 
 @Options({
   components: {
-    HelloWorld,
+    MyForm,MyList
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public title = 'Vuex With Typescript';
+}
 </script>
 
 <style>
@@ -23,5 +29,8 @@ export default class App extends Vue {}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.title {
+  margin-bottom: 50px;
 }
 </style>
